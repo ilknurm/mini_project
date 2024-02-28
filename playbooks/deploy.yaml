@@ -1,0 +1,7 @@
+- name: Deploy all configurations
+  hosts: ubuntu
+  become: true
+  tasks: 
+    - name: Install nginx and apache create user nur
+      ansible.builtin.include_tasks:
+        file: "{{ playbook_dir }}/../tasks/ubuntu/configure-ubuntu.yaml"
